@@ -6,7 +6,7 @@ services:
       xpack.security.enabled: "false"
       ES_JAVA_OPTS: "-Xms512m -Xmx512m"
     ports:
-      - "127.0.0.1:9221:9221"
+      - "127.0.0.1:9221:9200"
     volumes:
       - elasticsearch-data:/usr/share/elasticsearch/data
     healthcheck:
@@ -23,7 +23,7 @@ services:
     image: yaxbase:arm64
     platform: linux/arm64
     environment:
-      ELASTICSEARCH_URL: http://elasticsearch:9221
+      ELASTICSEARCH_URL: http://elasticsearch:9200
     depends_on:
       elasticsearch:
         condition: service_healthy
