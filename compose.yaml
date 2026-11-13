@@ -23,7 +23,7 @@ services:
     image: yaxbase:arm64
     platform: linux/arm64
     ports:
-    - "127.0.0.1:8003:8000"
+    - "8003:8000"
     environment:
       ELASTICSEARCH_URL: http://elasticsearch:9200
       MAINPORT : 8000
