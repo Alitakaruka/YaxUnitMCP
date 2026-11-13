@@ -22,8 +22,11 @@ services:
   mcp-server:
     image: yaxbase:arm64
     platform: linux/arm64
+    ports:
+    - "127.0.0.1:8003:8000"
     environment:
       ELASTICSEARCH_URL: http://elasticsearch:9200
+      MAINPORT : 8000
     depends_on:
       elasticsearch:
         condition: service_healthy
